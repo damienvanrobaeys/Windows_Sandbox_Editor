@@ -1,0 +1,55 @@
+<Grid
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"	
+	Height="180"	 
+
+    >
+    <Grid.Resources>
+	    <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source=".\resources\Icons.xaml" />
+	        </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Grid.Resources>
+
+	
+    <StackPanel  HorizontalAlignment="Center" Orientation="Vertical" Margin="0,5,0,0">	
+
+			<StackPanel Orientation="Vertical" Margin="0,5,0,0" >	
+			
+				<StackPanel HorizontalAlignment="Center">
+					<Label Content="Set shared folder configuration" Foreground="RoyalBlue" FontSize="20" FontWeight="Bold"/>
+				</StackPanel>			
+			
+				<Border BorderBrush="DodgerBlue" BorderThickness="1" Width="230" Height="70" Margin="0,5,0,0">						
+					<ScrollViewer  CanContentScroll="True" Height="165">        					
+						<Grid Background="white" HorizontalAlignment="Left">
+							<StackPanel Orientation="Vertical" Margin="0,0,0,0">	
+								<StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+									<Label Content="Folder path:" Width="80"/>
+									<TextBox x:Name="Set_Folder_Path" Width="110"/>
+								</StackPanel>
+
+								<StackPanel  Orientation="Horizontal"  Margin="0,5,0,0">	
+									<Label Content="Read only ?" Margin="0,0,0,0" Width="80"></Label>
+									<ComboBox x:Name="Set_Folder_ReadOnly" SelectedIndex="0" Text="Choose" Height="25" Width="110" Margin="0,0,0,0">
+										<ComboBoxItem x:Name="Set_Folder_ReadOnly_True" Content="True"></ComboBoxItem>
+										<ComboBoxItem x:Name="Set_Folder_ReadOnly_False" Content="False"></ComboBoxItem>
+									</ComboBox>  	
+								</StackPanel>
+
+							</StackPanel>									
+						</Grid>
+					</ScrollViewer> 	
+				</Border>					
+			</StackPanel>		
+						
+			<StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,5,0,0">
+				<!-- <Label Content="" Width="80"/>		 -->
+				<Button x:Name="SaveAndClose_Dialog" Content="Save" Width="112"/>
+				<Button Margin="6,0,0,0" x:Name="Cancel" Content="Cancel" Width="112"/>
+			</StackPanel>					
+	</StackPanel>
+	
+</Grid>

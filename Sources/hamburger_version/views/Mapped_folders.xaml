@@ -1,0 +1,59 @@
+<Grid
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks" 		
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	
+	<Grid.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Grid.Resources>		
+	
+	
+	<Grid  Margin="10,10,10,10" Height="250">	
+		<StackPanel Orientation="Horizontal" Margin="0,0,0,0" VerticalAlignment="Top">	
+
+			<StackPanel Margin="0,10,0,0"> 		
+				<DataGrid SelectionMode="Extended" BorderBrush="RoyalBlue" Height="150" Width="400" BorderThickness="1" AutoGenerateColumns="True"  Name="DataGrid_Folders"  ItemsSource="{Binding}"  Margin="1,1,1,1" >
+					<DataGrid.Columns>					
+						<DataGridTextColumn Header="Path" Binding="{Binding Path}"/>	
+						<DataGridTextColumn Header="ReadOnly" Binding="{Binding ReadOnly}"/>		
+						<DataGridTemplateColumn Width="auto">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<StackPanel Orientation="Horizontal">
+										<Button Name="Edit" ToolTip="Edit" Background="#2d89ef" Style="{DynamicResource MetroCircleButtonStyle}" 
+											Height="35" Width="35" Cursor="Hand" BorderThickness="0">
+											<iconPacks:PackIconModern Width="17" Height="17" Foreground="White" Kind="edit" Margin="0,0,0,0"/>													 -->
+										</Button>
+										
+										<Button Name="Remove" ToolTip="Remove" Background="#ffc40d" Style="{DynamicResource MetroCircleButtonStyle}" 
+											Height="35" Width="35" Cursor="Hand" BorderThickness="0">															
+											<iconPacks:PackIconModern Width="17" Height="17" Foreground="White"  Kind="delete" Margin="0,0,0,0"/>	
+										</Button>	
+										
+									</StackPanel>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+					</DataGrid.Columns>
+				</DataGrid>
+			</StackPanel>	
+
+			<StackPanel Orientation="Vertical"> 
+				<GroupBox Header="Share a new folder" VerticalAlignment="Top" Height="150" BorderBrush="CornFlowerBlue" Margin="10,10,0,0"  Width="180" >	
+					<StackPanel HorizontalAlignment="Center" Margin="0,20,0,0" Orientation="Vertical" >		
+						<Controls:ToggleSwitch Name="ReadOnlyOrNot" OnLabel=" Not read only" OffLabel=" Read only"   Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}" Margin="0,10,0,0" Width="150"/>															
+						<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,20,0,0">		
+							<Button Width="100" Content="Browse folder" x:Name="Shared_Folder_Path" BorderThickness="0" Margin="0,0,0,0"/>										
+						</StackPanel>
+					</StackPanel>											
+				</GroupBox>					
+			</StackPanel>	
+		</StackPanel>					
+	</Grid>				
+</Grid>
